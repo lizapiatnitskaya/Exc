@@ -22,7 +22,7 @@ public class MultiRandom {
 					Name = string.substring(5) ;
 				    if(threadMap.get(Name)!=null) {
 				    	FileWriter s=threadMap.get(Name);
-				    	s.NeedStop = true;
+				    	s.setFileNeedStop(true) ;
 				    }
 				    else{
 				    	System.out.println("В данный момент файл не задействован");
@@ -30,14 +30,14 @@ public class MultiRandom {
 			 }
 			 if(string.startsWith("Status")){
 				 for(FileWriter s:threadMap.values()){
-					 System.out.println(s.Name +" "+s.Counter);
+					 System.out.println(s.getFileName() +" "+s.getFileCounter());
 					 
 				 }
 				 
 			 }
 			 if(string.startsWith("Exit")){
 				 for(FileWriter s:threadMap.values()){
-					 s.NeedStop = true;
+					 s.setFileNeedStop(true);
 					 return;
 					 
 				 }

@@ -8,14 +8,24 @@ import java.util.Random;
 
 
 public class FileWriter extends Thread {
-	String Name;
-	boolean NeedStop;
-	int Counter;
+	private String Name;
+	private boolean NeedStop;
+	private int Counter;
+	public void  setFileNeedStop(boolean x){
+		this.NeedStop= x;
+        }
+	public String getFileName(){
+        return Name;
+        }
+	public int getFileCounter(){
+        return Counter;
+        }
 	FileWriter( String FileName ){
 		Name = FileName;
 		NeedStop = false;
-	
+		  
 	}
+	   
 	 public void run() {
 	
 		 try{
